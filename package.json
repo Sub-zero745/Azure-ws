@@ -1,12 +1,11 @@
 {
-  "name": "azure-proxy",
+  "name": "azure-ssh-proxy",
   "version": "1.0.0",
-  "description": "Proxy WebSocket en Node.js para Azure Container Apps",
+  "description": "Proxy TCP/WS hacia servidor SSH",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": ["proxy", "websocket", "azure", "ssh"],
   "author": "ZERO",
   "license": "MIT"
 }
