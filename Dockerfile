@@ -1,20 +1,20 @@
-# Imagen base Node 18
+# Imagen base oficial de Node.js
 FROM node:18
 
-# Directorio de trabajo
+# Crear carpeta de trabajo
 WORKDIR /app
 
-# Copiar package.json primero
+# Copiar package.json y package-lock.json (si existe)
 COPY package*.json ./
 
-# Instalar dependencias
+# Instalar dependencias (aquí no instala nada porque usas solo net nativo)
 RUN npm install
 
-# Copiar el resto de archivos
+# Copiar el resto del código
 COPY . .
 
-# Exponer puerto 8080
+# Exponer el puerto en el que escucha tu servidor
 EXPOSE 8080
 
-# Iniciar app
+# Comando para arrancar la app
 CMD ["npm", "start"]
