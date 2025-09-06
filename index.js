@@ -1,13 +1,11 @@
-const net = require('net');
 
-// Usar la variable de entorno PORT que Azure asigna, fallback a 8080
-const LISTEN_PORT = process.env.PORT || 8080;
+const net = require('net');
 
 const server = net.createServer(socket => {
   console.log('⚡️ Nueva conexión TCP entrante');
     
-  const PORT = 22;
-  const IP = '5.34.178.42';
+   const PORT = 22;
+   const IP = '5.34.178.42';
 
   // Conexión al servidor SSH
   const ssh = net.connect({ host: IP, port: PORT }, () => {
@@ -68,7 +66,6 @@ const server = net.createServer(socket => {
   });
 });
 
-// Usar LISTEN_PORT (variable de entorno o fallback a 8080)
-server.listen(LISTEN_PORT, () => {
-  console.log(`✅ Servidor proxy escuchando en puerto ${LISTEN_PORT}`);
+server.listen(80, () => {
+  console.log('✅ Servidor proxy escuchando en puerto 80');
 });
